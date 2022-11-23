@@ -1,0 +1,42 @@
+{% extends 'my_app/base.html' %}
+{% block content  %}
+<h1 class="font-bold text-2xl m-10">+ ADD Product</h1>
+<form class="bg-white w-3/5 shadow-md m-10 px-8 py-8" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Product Name</label>
+        <div  class="shadow appearance-none border w-1/3 rounded py-2 px-3 mr-10 text-gray-700">
+         {{form.name}}
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Product Price</label>
+        <div  class="shadow appearance-none border w-1/3 rounded py-2 px-3 mr-10 text-gray-700">
+            {{form.price}}
+           </div>    </div>
+
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Product Description</label>
+        <div  class="shadow appearance-none border w-1/3 rounded py-2 px-3 mr-10 text-gray-700">
+            {{form.desc}}
+           </div>    </div>
+
+    <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Product Image</label>
+           <div  class="shadow appearance-none border w-1/3 rounded py-2 px-3 mr-10 text-gray-700">
+                 {{form.image}}
+           </div>    
+    </div>
+    <div class="mb-4">
+            <div  class="shadow hidden appearance-none border w-1/3 rounded py-2 px-3 mr-10 text-gray-700">
+                {{form.seller_name}}
+            </div>    
+    </div>
+    <div class="mb-4">
+        <input class="bg-green-500 text-white px-5 py-2" type="submit" accept="image/*" value="Add Product">
+    </div>
+    
+</form>
+
+{% endblock  %}
