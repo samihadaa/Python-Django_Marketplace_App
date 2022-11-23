@@ -12,7 +12,7 @@ class Product(models.Model):
         return self.name
     def get_absolute_url(self):
         return reverse('my_app:products')
-
+#Order detail model
 class OrderDetail(models.Model):
     customer_username = models.CharField(max_length=200)
     product = models.ForeignKey(to='Product',on_delete=models.PROTECT)
